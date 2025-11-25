@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ульяновский областной художественный музей</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo">Ульяновский областной художественный музей</div>
+      <nav>
+        <button class="active" onclick="switchTab('home')">Главная</button>
+        <button onclick="switchTab('artists')">Художники</button>
+        <button onclick="switchTab('contacts')">Контакты</button>
+      </nav>
+    </div>
+  </header>
+
+<!-- Main Content -->
+<main class="container">
+
+  <!-- Home Tab -->
+  <section id="home" class="tab-content active-tab">
+    <!-- Поле поиска -->
+    <h2>Поиск произведений искусства</h2>
+    <form class="search-bar">
+      <input type="text" placeholder="Введите имя художника..." oninput="filterArtists(this.value)"/>
+    </form>
+
+    <h2 style="margin-top: 2rem;">Наши галереи:</h2>  
+      <div class="card" data-artist="Васильев Фёдор Александрович">
+        <img src="images/Васильев-Ф.А.-Гумно.jpg" alt="Гумно">
+        <div class="card-body">
+          <h3>Гумно</h3>
+          <p>Васильев Фёдор Александрович</p>
+          <span class="btn">Посмотреть</span>
+        </div>
+      </div>
+
+      <div class="card" data-artist="Илья Ефимович Репин">
+        <img src="images/Репин-И.Е.-Солдат.jpg" alt="Солдат">
+        <div class="card-body">
+          <h3>Солдат</h3>
+          <p>Илья Ефимович Репин</p>
+          <span class="btn">Посмотреть</span>
+        </div>
+      </div>
+
+      <div class="card" data-artist="Илья Ефимович Репин">
+        <img src="images/S600xU_2x.jpg" alt="Бурлаки на Волге">
+        <div class="card-body">
+          <h3>Бурлаки на Волге</h3>
+          <p>Илья Ефимович Репин</p>
+          <span class="btn">Посмотреть</span>
+        </div>
+      </div>
+
+      <div class="card" data-artist="Илья Ефимович Репин">
+        <img src="images/Lug.jpg" alt="Мокрый луг">
+        <div class="card-body">
+          <h3>Мокрый луг</h3>
+          <p>Илья Ефимович Репин</p>
+          <span class="btn">Посмотреть</span>
+        </div>
+      </div>
+
+      <div class="card" data-artist="Васнецов Аполлинарий Михайлович">
+        <img src="images/koneg.jpg" alt="Московский застенок при Иване Грозном (Константино-Еленинские ворота московского застенка)">
+        <div class="card-body">
+          <h3>Московский застенок при Иване Грозном (Константино-Еленинские ворота московского застенка)</h3>
+          <p>Васнецов Аполлинарий Михайлович</p>
+          <span class="btn">Посмотреть</span>
+        </div>
+      </div>  
+
+      <div class="card" data-artist="Васнецов Аполлинарий Михайлович">
+        <img src="images/Московский Кремль при Иване IIIjpg.jpg" alt="Московский Кремль при Иване III">
+        <div class="card-body">
+          <h3>Московский Кремль при Иване III</h3>
+          <p>Васнецов Аполлинарий Михайлович</p>
+          <span class="btn">Посмотреть</span>
+        </div>
+      </div>
+
+      <div class="card" data-artist="Васнецов Аполлинарий Михайлович">
+        <img src="images/Москва при Иване Грозном. Красная площадь.jpg" alt="Москва при Иване Грозном. Красная площадь">
+        <div class="card-body">
+          <h3>Москва при Иване Грозном. Красная площадь</h3>
+          <p>Васнецов Аполлинарий Михайлович</p>
+          <span class="btn">Посмотреть</span>
+        </div>
+      </div>
+
+      <div class="card" data-artist=" Иван Константинович Айвазовский">
+        <img src="images/dvoreg.jpg" alt="Большой Петергофский дворец">
+        <div class="card-body">
+          <h3>Большой Петергофский дворец</h3>
+          <p> Иван Константинович Айвазовский</p>
+          <span class="btn">Посмотреть</span>
+        </div>
+      </div> 
+
+      <div class="card" data-artist=" Аркадий Александрович Пластов">
+        <img src="images/Фашист.jpg" alt="Фашист пролител">
+        <div class="card-body">
+          <h3>Фашист пролител</h3>
+          <p> Аркадий Александрович Пластов</p>
+          <span class="btn">Посмотреть</span>
+        </div>
+      </div> 
+
+      <div class="card" data-artist=" Иван Иванович Шишкин">
+        <img src="images/рожь.jpg" alt="Рожь">
+        <div class="card-body">
+          <h3>Рожь</h3>
+          <p> Иван Иванович Шишкин</p>
+          <span class="btn">Посмотреть</span>
+        </div>
+      </div> 
+
+      <div class="card" data-artist=" Аркадий Александрович Пластов">
+        <img src="images/Ужин.jpg" alt="Ужин трактористов">
+        <div class="card-body">
+          <h3>Ужин трактористов</h3>
+          <p> Аркадий Александрович Пластов</p>
+          <span class="btn">Посмотреть</span>
+        </div>
+      </div> 
+
+      <div class="card" data-artist=" Аркадий Александрович Пластов">
+        <img src="images/Весна в бане.jpg" alt="Весна. В бане">
+        <div class="card-body">
+          <h3>Весна. В бане</h3>
+          <p> Аркадий Александрович Пластов</p>
+          <span class="btn">Посмотреть</span>
+        </div>
+      </div> 
+
+      <div class="card" data-artist=" Исаак Ильич Левитан">
+        <img src="images/после дождя.jpg" alt="После дождя. Плёс">
+        <div class="card-body">
+          <h3>После дождя. Плёс</h3>
+          <p> Исаак Ильич Левитан</p>
+          <span class="btn">Посмотреть</span>
+        </div>
+      </div> 
+
+      <div class="card" data-artist=" Исаак Ильич Левитан">
+        <img src="images/осенний день.jpg" alt="Осенний день. Сокольники">
+        <div class="card-body">
+          <h3>Осенний день. Сокольники</h3>
+          <p> Исаак Ильич Левитан</p>
+          <span class="btn">Посмотреть</span>
+        </div>
+      </div> 
+
+      <div class="card" data-artist=" Исаак Ильич Левитан">
+        <img src="images/солнечный день.jpg" alt="Солнечный день. Весна">
+        <div class="card-body">
+          <h3>Солнечный день. Весна</h3>
+          <p> Исаак Ильич Левитан</p>
+          <span class="btn">Посмотреть</span>
+        </div>
+      </div>
+      
+      <div class="card" data-artist=" Исаак Ильич Левитан">
+        <img src="images/В.И.Ленин.jpg" alt="В. И. Ленин в Разливе">
+        <div class="card-body">
+          <h3>В. И. Ленин в Разливе</h3>
+          <p> Аркадий Александрович Пластов</p>
+          <span class="btn">Посмотреть</span>
+        </div>
+      </div>
+
+      <div class="card" data-artist=" Аркадий Александрович Пластов">
+        <img src="images/Витя.jpg" alt="Витя-подпасок">
+        <div class="card-body">
+          <h3>Витя-подпасок</h3>
+          <p> Аркадий Александрович Пластов</p>
+          <span class="btn">Посмотреть</span>
+        </div>
+      </div>
+      
+      <div class="card" data-artist=" Алексей Кондратьевич Саврасов">
+        <img src="images/Вечер_(Саврасов).jpg" alt="Вечер">
+        <div class="card-body">
+          <h3>Вечер</h3>
+          <p> Алексей Кондратьевич Саврасов</p>
+          <span class="btn">Посмотреть</span>
+        </div>
+      </div> 
+
+      <div class="card" data-artist=" Алексей Кондратьевич Саврасов">
+        <img src="images/проселок.jpg" alt="Просёлок">
+        <div class="card-body">
+          <h3>Просёлок</h3>
+          <p> Алексей Кондратьевич Саврасов</p>
+          <span class="btn">Посмотреть</span>
+        </div>
+      </div>
+
+      <div class="card" data-artist=" Алексей Кондратьевич Саврасов">
+        <img src="images/волга.jpg" alt="Пейзаж. Берег Волги">
+        <div class="card-body">
+          <h3>Пейзаж. Берег Волги</h3>
+          <p> Алексей Кондратьевич Саврасов</p>
+          <span class="btn">Посмотреть</span>
+        </div>
+      </div>
+
+  </section>
+
+    <!-- Artists Tab -->
+    <section id="artists" class="tab-content">
+      <h2>Профиль художника</h2>
+
+      <!-- Профиль: Фёдор Александрович Васильев -->
+      <div id="vasilev" class="artist-profile active-profile">
+        <img src="images/Vasilyev_self.jpg" alt="Фёдор Александрович Васильев"/>
+        <div>
+          <h3>Фёдор Александрович Васильев</h3>
+          <p class="artist-bio">
+            Русский живописец, представитель передвижничества. Один из самых ярких пейзажистов второй половины XIX века.
+            Известен своими работами на темы русской природы и крестьянской жизни.
+          </p>
+          <h4>Известные работы:</h4>
+          <ul>
+            <li>Март месяц</li>
+            <li>Осенняя пора. Опять пошли дожди…</li>
+            <li>Зимой у реки</li>
+          </ul>
+          <p>
+            <strong>Биография:</strong> 
+            <a href="https://ru.wikipedia.org/wiki/Васильев,_Фёдор_Александрович"  target="_blank" rel="noopener noreferrer" class="wiki-link">
+              См. на Википедии
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Профиль: Иван Константинович Айвазовский -->
+      <div id="vasilev" class="artist-profile active-profile">
+        <img src="images/айвазовский.jpg" alt="Иван Константинович Айвазовский"/>
+        <div>
+          <h3>Иван Константинович Айвазовский</h3>
+          <p class="artist-bio">
+            Русский живописец и график, один из самых известных маринистов XIX века, коллекционер и меценат. 
+          </p>
+          <h4>Известные работы:</h4>
+          <ul>
+            <li>Большой Петергофский дворец</li>
+            <li>Восточная сцена. Каик с турчанками</li>
+            <li>Чесменский бой в ночь с 25 на 26 июня 1770 года</li>
+          </ul>
+          <p>
+            <strong>Биография:</strong> 
+            <a href="https://ru.wikipedia.org/wiki/Айвазовский,_Иван_Константинович"  target="_blank" rel="noopener noreferrer" class="wiki-link">
+              См. на Википедии
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Профиль: Исаак Ильич Левитан -->
+      <div id="velitan" class="artist-profile active-profile">
+        <img src="images/левитан.jpg" alt="Исаак Ильич Левитан"/>
+        <div>
+          <h3>Исаак Ильич Левитан</h3>
+          <p class="artist-bio">
+             Русский живописец и рисовальщик еврейского происхождения, один из самых знаменитых пейзажистов пореформенной эпохи. Академик Императорской Академии художеств (1898). 
+          </p>
+          <h4>Известные работы:</h4>
+          <ul>
+            <li>После дождя. Плёс</li>
+            <li>Осенний день. Сокольники</li>
+            <li>Солнечный день. Весна</li>
+          </ul>
+          <p>
+            <strong>Биография:</strong> 
+            <a href="https://ru.wikipedia.org/wiki/Левитан,_Исаак_Ильич"  target="_blank" rel="noopener noreferrer" class="wiki-link">
+              См. на Википедии
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Профиль: Иван Иванович Шишкин -->
+      <div id="vasilev" class="artist-profile active-profile">
+        <img src="images/Ivan_Shishkin_restoration.jpg" alt="Иван Иванович Шишкин"/>
+        <div>
+          <h3>Иван Иванович Шишкин</h3>
+          <p class="artist-bio">
+            Русский живописец и график, один из самых знаменитых пейзажистов пореформенной эпохи, создатель хрестоматийной картины «Утро в сосновом лесу». 
+          </p>
+          <h4>Известные работы:</h4>
+          <ul>
+            <li>Рожь</li>
+            <li>На опушке соснового леса</li>
+            <li>Лесные дали</li>
+          </ul>
+          <p>
+            <strong>Биография:</strong> 
+            <a href="https://ru.wikipedia.org/wiki/Шишкин,_Иван_Иванович"  target="_blank" rel="noopener noreferrer" class="wiki-link">
+              См. на Википедии
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Профиль: Аркадий Александрович Пластов -->
+      <div id="plastov" class="artist-profile active-profile">
+        <img src="images/Пластов_Аркадий_Александрович.jpg" alt="Аркадий Александрович Пластов"/>
+        <div>
+          <h3>Аркадий Александрович Пластов</h3>
+          <p class="artist-bio">
+            Советский художник-живописец. Народный художник СССР (1962). Академик АХ СССР. Лауреат Ленинской премии (1966) и Сталинской премии первой степени (1946). 
+          </p>
+          <h4>Известные работы:</h4>
+          <ul>
+            <li>Весна.В бане</li>
+            <li>Жатва</li>
+            <li>Ужин трактористов</li>
+          </ul>
+          <p>
+            <strong>Биография:</strong> 
+            <a href="https://ru.wikipedia.org/wiki/Пластов,_Аркадий_Александрович"  target="_blank" rel="noopener noreferrer" class="wiki-link">
+              См. на Википедии
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Профиль: Алексей Константинович Саврасов -->
+      <div id="savrasov" class="artist-profile active-profile">
+        <img src="images/А.К.Саврасова.jpg" alt="Алексей Константинович Саврасов"/>
+        <div>
+          <h3>Аркадий Александрович Пластов</h3>
+          <p class="artist-bio">
+            Русский живописец, один из наиболее значимых московских пейзажистов пореформенной эпохи, создатель ставшей архетипической и культовой картины «Грачи прилетели». Один из членов-учредителей Товарищества передвижников (с 1870). Академик Императорской Академии художеств (с 1854). 
+          </p>
+          <h4>Известные работы:</h4>
+          <ul>
+            <li>Вечер</li>
+            <li>Просёлок</li>
+            <li>Пейзаж. Берег Волги</li>
+          </ul>
+          <p>
+            <strong>Биография:</strong> 
+            <a href="https://ru.wikipedia.org/wiki/Саврасов,_Алексей_Кондратьевич"  target="_blank" rel="noopener noreferrer" class="wiki-link">
+              См. на Википедии
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Профиль: Васнецов Аполлинарий Михайлович -->
+      <div id="Vasnetsov" class="artist-profile active-profile">
+        <img src="images/Vasnetsov.jpg" alt="Васнецов Аполлинарий Михайлович"/>
+        <div>
+          <h3>Васнецов Аполлинарий Михайлович</h3>
+          <p class="artist-bio">
+            Русский художник, мастер исторической живописи, искусствовед, младший брат художника Виктора Васнецова. Член литературно-художественного кружка «Молодая среда». 
+          </p>
+          <h4>Известные работы:</h4>
+          <ul>
+            <li>Московский Кремль при Иване III</li>
+            <li>Москва при Иване Грозном. Красная площадь</li>
+            <li>Московский застенок при Иване Грозном (Константино-Еленинские ворота московского застенка)</li>
+          </ul>
+          <p>
+            <strong>Биография:</strong> 
+            <a href="https://ru.wikipedia.org/wiki/Васнецов,_Аполлинарий_Михайлович"  target="_blank" rel="noopener noreferrer" class="wiki-link">
+              См. на Википедии
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Профиль: Илья Ефимович Репин -->
+      <div id="repin" class="artist-profile">
+        <img src="images/Ilya_Repin_(1909).jpg" alt="Илья Ефимович Репин"/>
+        <div>
+          <h3>Илья Ефимович Репин</h3>
+          <p class="artist-bio">
+            Выдающийся русский художник, мастер исторической, бытовой и портретной живописи.
+            Член товарищества передвижных художественных выставок. Автор множества картин,
+            ставших классикой русского искусства.
+          </p>
+          <h4>Известные работы:</h4>
+          <ul>
+            <li>Бурлаки на Волге</li>
+            <li>Крестный ход в Курской губернии</li>
+            <li>Запорожцы пишут письмо турецкому султану</li>
+          </ul>
+          <p>
+            <strong>Биография:</strong> 
+            <a href="https://ru.wikipedia.org/wiki/Репин,_Илья_Ефимович"  target="_blank" rel="noopener noreferrer" class="wiki-link">
+              См. на Википедии
+            </a>
+          </p>
+        </div>
+      </div>
+      
+    </section>
+
+    <!-- Contacts Tab -->
+    <section id="contacts" class="tab-content">
+      <div class="contact-section">
+        <div class="contact-info">
+          <p>Если у вас есть какие-либо вопросы или предложения, вы можете связаться с нами следующими способами:</p>
+          <p>Email: <a href="mailto:email@example.com">email@example.com</a></p>
+          <p>Телефон: +7 (123) 456-78-90</p>
+        </div>
+        <form class="contact-form">
+          <label for="name">Имя:</label>
+          <input type="text" id="name" required/>
+          <label for="email">Email:</label>
+          <input type="email" id="email" required/>
+          <label for="message">Сообщение:</label>
+          <textarea id="message" rows="5" required></textarea>
+          <button type="submit">Отправить</button>
+        </form>
+      </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer>
+  &copy; 2025 Ульяновский областной художественный музей. Все права защищены.
+</footer>
+
+<script>
+  function switchTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active-tab'));
+    document.getElementById(tabId).classList.add('active-tab');
+    document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+  }
+
+  
+
+  function openModal(data) {
+    document.getElementById('modal-image').src = data.image;
+    document.getElementById('modal-title').textContent = data.title;
+    document.getElementById('modal-artist').textContent = data.artist;
+    document.getElementById('modal-description').textContent = data.description;
+    document.getElementById('artwork-modal').style.display = 'flex';
+  }
+
+  function closeModal() {
+    document.getElementById('artwork-modal').style.display = 'none';
+  }
+
+  function filterArtists(query) {
+  const cards = document.querySelectorAll('.card');
+  query = query.toLowerCase();
+
+  cards.forEach(card => {
+    const artist = card.querySelector('p').textContent.toLowerCase();
+    if (artist.includes(query)) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
+
+</body>
+</html>
